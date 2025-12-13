@@ -45,7 +45,7 @@ head -3 ~/neurosity_logs/eeg_data.jsonl | python3 -m json.tool
 - Credential file for Neurosity (when using Neurosity device): place `.env` in the `neurosity_driver` package directory, example keys:
 
 ```
-NEUROSITY_DEVICE_ID=your_device_id
-NEUROSITY_EMAIL=you@example.com
+NEUROSITY_DEVICE_ID=your_device_id;
+NEUROSITY_EMAIL=you@example.com;
 NEUROSITY_PASSWORD=supersecret
 ```
