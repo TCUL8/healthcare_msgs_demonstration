@@ -1,6 +1,6 @@
 **Project Overview**
 - **Name:**     healthcare_msgs_demonstration
-- 
+  
 - **Purpose:** Demonstrates publishing EEG data (using `healthcare_msgs/msg/biosensing/raw_biosignals/EEG.msg`) from a Neurosity, openBCI device or a simulator and storing it in JSONL format for downstream processing.
 
 **Supported OS**: Linux (instructions are written and tested for a Linux desktop/server environment).
