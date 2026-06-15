@@ -34,27 +34,25 @@ query_api = client.query_api()
 @app.get("/latency/mean")
 def latency_mean():
     query = f'''
-from(bucket: "{INFLUX_BUCKET}")
-  |> range(start: -10s)
-'''
+    from(bucket: "{INFLUX_BUCKET}")
+      |> range(start: -10s)
+      |> filter(fn: (r) => r._measurement == "eeg_latency")
+      |> filter(fn: (r) => r._field == "latency_ms")
+      |> mean()
+    '''
 
     tables = query_api.query(query)
 
-    rows = []
-    for t in tables:
-        for r in t.records:
-            rows.append({
-                "measurement": r.get_measurement(),
-                "field": r.get_field(),
-                "value": r.get_value(),
-                "time": str(r.get_time())
-            })
+    for table in tables:
+        for record in table.records:
+            return {
+                "mean_latency_ms": record.get_value()
+            }
 
     return {
-        "count": len(rows),
-        "sample": rows[:20]
+        "mean_latency_ms": None,
+        "message": "no data"
     }
-
 
 @app.get("/eeg/raw")
 def eeg_raw(window: int = 2):
