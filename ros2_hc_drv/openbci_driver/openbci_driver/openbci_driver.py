@@ -40,7 +40,7 @@ class OpenBCINode(Node):
             eeg_msg.session_id = self.session_id
             eeg_msg.sample_size = self.batch_size
             eeg_msg.eeg = batch.flatten().tolist()
-            eeg_msg.quality = [1.0] * (self.channel_count * self.batch_size)
+            eeg_msg.signal_quality = [1.0] * (self.channel_count * self.batch_size)
             self.publisher_eeg.publish(eeg_msg)
 
             # Clear buffer

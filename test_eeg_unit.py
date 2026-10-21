@@ -100,9 +100,9 @@ class UnitTests:
             
             # Write 3 messages
             test_msgs = [
-                {'header': {'stamp': {'sec': 1, 'nsec': 0}, 'frame_id': 'test'}, 'eeg': [1.0, 2.0], 'quality': [0.9]},
-                {'header': {'stamp': {'sec': 2, 'nsec': 0}, 'frame_id': 'test'}, 'eeg': [3.0, 4.0], 'quality': [0.8]},
-                {'header': {'stamp': {'sec': 3, 'nsec': 0}, 'frame_id': 'test'}, 'eeg': [5.0, 6.0], 'quality': [0.7]},
+                {'header': {'stamp': {'sec': 1, 'nsec': 0}, 'frame_id': 'test'}, 'eeg': [1.0, 2.0], 'signal_quality': [0.9]},
+                {'header': {'stamp': {'sec': 2, 'nsec': 0}, 'frame_id': 'test'}, 'eeg': [3.0, 4.0], 'signal_quality': [0.8]},
+                {'header': {'stamp': {'sec': 3, 'nsec': 0}, 'frame_id': 'test'}, 'eeg': [5.0, 6.0], 'signal_quality': [0.7]},
             ]
             
             for msg in test_msgs:
