@@ -40,7 +40,7 @@ def extract_channels(messages):
         return None, 0, 0
     
     first_msg = messages[0]
-    num_channels = len(first_msg['quality'])
+    num_channels = len(first_msg['signal_quality'])
     sample_size = first_msg['sample_size']
     
     # Initialize channels

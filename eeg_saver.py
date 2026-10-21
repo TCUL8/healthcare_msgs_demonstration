@@ -59,7 +59,7 @@ class EEGSaver(Node):
                 'session_id': msg.session_id,
                 'sample_size': msg.sample_size,
                 'eeg': list(msg.eeg),  # Convert to list for JSON serialization
-                'quality': list(msg.quality),  # Convert to list for JSON serialization
+                'signal_quality': list(msg.signal_quality),  # Convert to list for JSON serialization
             }
             
             # Append to JSONL file (one JSON object per line)

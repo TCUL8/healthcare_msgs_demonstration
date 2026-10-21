@@ -60,7 +60,7 @@ class NeurosityEEGDriver(Node):
 
         eeg_msg.sample_size = len(channels[0])
         eeg_msg.eeg = flattened
-        eeg_msg.quality = [1.0]*len(channels)  # Placeholder; Neurosity SDK may not provide per-channel quality
+        eeg_msg.signal_quality = [1.0]*len(channels)  # Placeholder; Neurosity SDK may not provide per-channel quality
 
         self.eeg_pub.publish(eeg_msg)
 
